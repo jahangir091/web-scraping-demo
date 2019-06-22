@@ -8,7 +8,7 @@ r = requests.get(my_url)
 html_page = r.text
 page_soup = soup(r.text, 'html.parser')
 
-containers = page_soup.find_all("div", {"class":"list_item row"})
+page_containers = page_soup.find_all("div", {"class":"list_item row"})
 
 filename = page_soup.find('div', {'class':'span9'}).h1.text.strip() + ".csv"
 f = open(filename, "w")
@@ -17,7 +17,7 @@ f.write(headers)
 
 counter = 1
 
-for container in containers:
+for container in page_containers:
     product_name = container.find("div", {"class":"span6 prod_info"}).p.text.strip()
     product_short_description = container.find("div", {"class":"content"}).text.strip()
     product_image =  container.find("div", {"class":"fullimage"}).img['src']
@@ -34,3 +34,4 @@ for container in containers:
     counter +=1
 
     f.write(product_name + ", "+ product_short_description +", "+ product_image +", "+ product_stock_staus +", " + str(number_of_sub_products) +"\n")
+f.close()
