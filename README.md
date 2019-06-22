@@ -1,4 +1,6 @@
 # web-scraping-demo
+This is a simple python3 script for scraping information
+from web sites.
 
 # requirements
 **python3**, 
@@ -10,7 +12,7 @@ To check python version just open terminal and type the command below:
     
     python3 --version
 # 2. Now clone ***web-scraping-demo*** project from github
-    git clone  
+    git clone  https://github.com/jahangir091/web-scraping-demo.git
 # 3. Go to the project from the terminal where ***main.py*** file is
 # 4. Now install necessary python dependencies by runnung the command below
     sudo pip install -r requirements.txt
